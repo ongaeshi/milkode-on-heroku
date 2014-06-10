@@ -23,21 +23,17 @@ https://github.com/ongaeshi/gomilk.git
 .
 ```
 
+(optional) Rename.
+
+```
+$ heroku rename try-milkode
+```
+
 Push to Heroku.
 
 ```
 $ git push heroku master
-$ heroku apps:open
-```
-
-## Deploy to local
-
-```
-$ git clone https://github.com/groonga/milkode-on-heroku.git
-$ cd milkode-on-heroku
-$ bundle install
-# Init database & Add packages
-$ bundle exec rackup config.ru
+$ heroku open
 ```
 
 ## License
