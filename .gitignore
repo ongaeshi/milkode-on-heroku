@@ -1,6 +1,1 @@
-*.gem
 .bundle
-pkg/*
-vendor/*
-data/*
-source/*
