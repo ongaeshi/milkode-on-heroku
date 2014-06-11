@@ -7,5 +7,6 @@ CLI.start("init".split)
 CLI.start("add --from-file ./PACKAGES".split)
 
 p File.join(ENV['MILKODE_DEFAULT_DIR'], 'packages')
+system("rm -rf #{File.join(ENV['MILKODE_DEFAULT_DIR'], 'packages')}")
 
-FileUtils.rm_rf(File.join(ENV['MILKODE_DEFAULT_DIR'], 'packages'))
+# FileUtils.rm_rf(File.join(ENV['MILKODE_DEFAULT_DIR'], 'packages'))
