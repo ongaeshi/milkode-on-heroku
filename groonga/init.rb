@@ -6,8 +6,10 @@ ENV['MILKODE_DEFAULT_DIR'] = File.join(ENV['GROONGA_DATABASE_PATH'], '../../.mil
 CLI.start("init".split)
 
 open("./PACKAGES") do |f|
-  dst_dir = File.join(ENV['MILKODE_DEFAULT_DIR'], "packages/git")
-  p dst_dir
+  # dst_dir = File.join(ENV['MILKODE_DEFAULT_DIR'], "packages/git")
+  # p dst_dir
+  # FileUtils.mkdir_p dst_dir
+  dst_dir = File.join("/app/packages/git")
   FileUtils.mkdir_p dst_dir
   
   f.each do |url|
