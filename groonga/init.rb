@@ -7,6 +7,7 @@ CLI.start("init".split)
 
 open("./PACKAGES") do |f|
   dst_dir = File.join(ENV['MILKODE_DEFAULT_DIR'], "packages/git")
+  p dst_dir
   FileUtils.mkdir_p dst_dir
   
   f.each do |url|
