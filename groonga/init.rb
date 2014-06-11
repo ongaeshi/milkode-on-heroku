@@ -1,5 +1,5 @@
 require 'milkode/cli'
-require 'fileutis'
+require 'fileutils'
 
 ENV['MILKODE_DEFAULT_DIR'] = File.join(ENV['GROONGA_DATABASE_PATH'], '../../.milkode')
 
