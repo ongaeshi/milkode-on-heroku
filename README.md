@@ -14,11 +14,11 @@ $ cd milkode-on-heroku
 $ heroku apps:create --buildpack https://codon-buildpacks.s3.amazonaws.com/buildpacks/groonga/rroonga.tgz
 ```
 
-Edit the file `./PACKAGES`.
+Edit the file `./PACKAGES`. (Specify GitHub repositories)
 
 ```
-https://github.com/ongaeshi/milkode.git
-https://github.com/ongaeshi/gomilk.git
+ongaeshi/milkode
+ongaeshi/gomilk
 .
 .
 ```
