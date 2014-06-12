@@ -1,13 +1,24 @@
+# -*- coding: utf-8 -*-
 require 'milkode/cli'
 require 'fileutils'
+require 'optparse'
 
 class AddPackage
   attr_reader :dst_dir
   attr_reader :path
+  attr_reader :branch_name
 
   def initialize(dst_dir, str)
+    opt = OptionParser.new
+    opt.on('-n NAME', '--name')   { |name| @name = name }
+    opt.on('-b BRANCH_NAME', '--branch-name') { |branch_name| @branch_name = branch_name }
+    args = str.split
+    opt.parse!(args)
+    
     @dst_dir = dst_dir
-    @path = str
+    @path = args[0]
+
+    p git_clone
   end
 
   def url
@@ -15,7 +26,7 @@ class AddPackage
   end
 
   def name
-    File.basename(url).sub(/\.git\Z/, "")
+    @name || File.basename(url).sub(/\.git\Z/, "")
   end
 
   def filename
@@ -23,7 +34,11 @@ class AddPackage
   end
 
   def git_clone
-    "git clone --depth 1 #{url} #{filename}"
+    if branch_name
+      "git clone --depth 1 #{url} #{filename} -b #{branch_name}"
+    else
+      "git clone --depth 1 #{url} #{filename}"
+    end
   end
 
   def yaml
@@ -52,12 +67,12 @@ open("./PACKAGES") do |f|
   
   f.each do |path|
     package = AddPackage.new(dst_dir, path.chomp)
-    system(package.git_clone)
-    CLI.start("add #{package.filename}".split)
-    milkode_yaml_str += package.yaml
+    # system(package.git_clone)
+    # CLI.start("add #{package.filename}".split)
+    # milkode_yaml_str += package.yaml
   end
 end
 
-open(File.join(ENV['MILKODE_DEFAULT_DIR'], "milkode.yaml"), "w") do |f|
-  f.write(milkode_yaml_str)
-end
+# open(File.join(ENV['MILKODE_DEFAULT_DIR'], "milkode.yaml"), "w") do |f|
+#   f.write(milkode_yaml_str)
+# end
