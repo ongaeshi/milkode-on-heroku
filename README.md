@@ -4,7 +4,7 @@ Deploy the [Milkode](https://github.com/ongaeshi/milkode) on Heroku.
 
 Try: http://try-milkode.herokuapp.com/
 
-## Deploy
+## Setup
 
 Clone.
 
@@ -14,21 +14,43 @@ $ cd milkode-on-heroku
 $ heroku apps:create --buildpack https://codon-buildpacks.s3.amazonaws.com/buildpacks/groonga/rroonga.tgz
 ```
 
-Edit the file `./PACKAGES`. (Specify GitHub repositories)
-
-```
-ongaeshi/milkode
-ongaeshi/gomilk -n gooooomilk                  # Specify package name
-ongaeshi/milkode -n milkode-develop -b develop # Specify package and branch-name
-.
-.
-```
-
 (optional) Rename.
 
 ```
 $ heroku rename try-milkode
 ```
+
+## Specifies the packages that you want to add
+
+Edit the file `./PACKAGES`. Specify the GitHub repository name.
+
+- `-n (--name)` .. Specify pacakge name
+- `-b (--branch-name)` .. Specify branch
+
+```
+ongaeshi/milkode
+ongaeshi/gomilk  -n gooooomilk
+ongaeshi/milkode -n milkode-develop -b develop
+.
+.
+```
+
+## Customize title and icon
+
+Edit the file `./milkweb.yaml`
+
+```
+---
+:home_title  : "Milkode on Heroku"
+:home_icon   : "http://...../icon.png"
+
+:header_title: "Milkode"
+:header_icon : "/images/MilkodeIcon135.png"
+
+:display_about_milkode: true
+```
+
+## Deploy
 
 Push to Heroku.
 
