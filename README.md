@@ -18,7 +18,8 @@ Edit the file `./PACKAGES`. (Specify GitHub repositories)
 
 ```
 ongaeshi/milkode
-ongaeshi/gomilk
+ongaeshi/gomilk -n gooooomilk                  # Specify package name
+ongaeshi/milkode -n milkode-develop -b develop # Specify package and branch-name
 .
 .
 ```
