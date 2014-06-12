@@ -57,8 +57,10 @@ version: '0.2'
 contents:
 EOF
 
+# Initialize database
 CLI.start("init".split)
 
+# Add pacakges
 open("./PACKAGES") do |f|
   # dst_dir = File.join(ENV['MILKODE_DEFAULT_DIR'], "packages/git")
   dst_dir = File.join('/app', "packages/git")
@@ -72,6 +74,10 @@ open("./PACKAGES") do |f|
   end
 end
 
+# Rewrite milkode.yaml
 open(File.join(ENV['MILKODE_DEFAULT_DIR'], "milkode.yaml"), "w") do |f|
   f.write(milkode_yaml_str)
 end
+
+# Copy milkweb.yaml
+FileUtils.cp('./milkweb.yaml', ENV['MILKODE_DEFAULT_DIR'])
