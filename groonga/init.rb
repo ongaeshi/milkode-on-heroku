@@ -17,8 +17,6 @@ class AddPackage
     
     @dst_dir = dst_dir
     @path = args[0]
-
-    p git_clone
   end
 
   def url
@@ -67,12 +65,12 @@ open("./PACKAGES") do |f|
   
   f.each do |path|
     package = AddPackage.new(dst_dir, path.chomp)
-    # system(package.git_clone)
-    # CLI.start("add #{package.filename}".split)
-    # milkode_yaml_str += package.yaml
+    system(package.git_clone)
+    CLI.start("add #{package.filename}".split)
+    milkode_yaml_str += package.yaml
   end
 end
 
-# open(File.join(ENV['MILKODE_DEFAULT_DIR'], "milkode.yaml"), "w") do |f|
-#   f.write(milkode_yaml_str)
-# end
+open(File.join(ENV['MILKODE_DEFAULT_DIR'], "milkode.yaml"), "w") do |f|
+  f.write(milkode_yaml_str)
+end
