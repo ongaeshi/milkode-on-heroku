@@ -67,7 +67,9 @@ open("./PACKAGES") do |f|
   FileUtils.mkdir_p dst_dir
   
   f.each do |path|
-    package = AddPackage.new(dst_dir, path.chomp)
+    path.chomp!
+    next if /\A\s*\z/ =~ path
+    package = AddPackage.new(dst_dir, path)
     system(package.git_clone)
     CLI.start("add #{package.filename}".split)
     milkode_yaml_str += package.yaml
