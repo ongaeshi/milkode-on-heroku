@@ -62,7 +62,7 @@ CLI.start("init".split)
 
 # Add pacakges
 open("./PACKAGES") do |f|
-  # dst_dir = File.join(ENV['MILKODE_DEFAULT_DIR'], "packages/git")
+  build_dst_dir = File.join(ENV['MILKODE_DEFAULT_DIR'], "packages/git")
   dst_dir = File.join('/app', "packages/git")
   FileUtils.mkdir_p dst_dir
   
@@ -73,6 +73,7 @@ open("./PACKAGES") do |f|
     system(package.git_clone)
     CLI.start("add #{package.filename}".split)
     milkode_yaml_str += package.yaml
+    FileUtils.mv package.filename, build_dst_dir
   end
 end
 
