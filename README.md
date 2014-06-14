@@ -55,6 +55,7 @@ Edit the file `./milkweb.yaml`
 Push to Heroku.
 
 ```
+$ git commit -am "Add my settings"
 $ git push heroku master
 $ heroku open
 ```
