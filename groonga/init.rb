@@ -63,7 +63,7 @@ CLI.start("init".split)
 # Add pacakges
 open("./PACKAGES") do |f|
   # dst_dir = File.join(ENV['MILKODE_DEFAULT_DIR'], "packages/git")
-  dst_dir = File.join('/app', "packages/git")
+  dst_dir = File.join('/tmp', "packages/git")
   FileUtils.mkdir_p dst_dir
   
   f.each do |path|
