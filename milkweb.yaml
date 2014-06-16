@@ -1,8 +1,11 @@
 ---
 :home_title  : "Milkode on Heroku"
-:home_icon   : "http://f.st-hatena.com/images/fotolife/t/tuto0621/20120309/20120309233007.png"
+:home_icon   : "/images/MilkodeIcon135.png"
 
 :header_title: "Milkode"
 :header_icon : "/images/MilkodeIcon135.png"
 
+:favicon: "/images/favicon.ico"
+
 :display_about_milkode: true
+:hide_update_button: false
