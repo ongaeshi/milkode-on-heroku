@@ -21,7 +21,7 @@ GEM
     json (1.8.1)
     launchy (2.4.2)
       addressable (~> 2.3)
-    milkode (1.7.0)
+    milkode (1.7.1)
       archive-zip (>= 0.4.0)
       coderay (>= 1.0.5)
       haml (>= 3.1.2)
