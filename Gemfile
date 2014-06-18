@@ -1,3 +1,3 @@
 source "https://rubygems.org/"
 
-gem "milkode"
+gem "milkode", :git => 'git://github.com/ongaeshi/milkode.git', :branch => "develop"
