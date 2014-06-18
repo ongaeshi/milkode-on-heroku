@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/ongaeshi/milkode.git
-  revision: 19acc71fac69a3e9f925c95361d67597dd38ac36
+  revision: aec6813ab206ed4dff199483fda41d32d6c5b051
   branch: develop
   specs:
     milkode (1.7.1)
