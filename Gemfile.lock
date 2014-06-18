@@ -1,9 +1,9 @@
 GIT
-  remote: git://github.com/ongaeshi/milkode.git
-  revision: c4c168a0c50c95414dcd169ff5f42e7aab33ff30
+  remote: https://github.com/ongaeshi/milkode.git
+  revision: 19acc71fac69a3e9f925c95361d67597dd38ac36
   branch: develop
   specs:
-    milkode (1.7.0)
+    milkode (1.7.1)
       archive-zip (>= 0.4.0)
       coderay (>= 1.0.5)
       haml (>= 3.1.2)
