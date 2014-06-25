@@ -1,6 +1,7 @@
 ---
-:home_title  : "Milkode on Heroku"
-:home_icon   : "/images/MilkodeIcon135.png"
+:home_title     : "Milkode on Heroku"
+:home_icon      : "/images/MilkodeIcon135.png"
+:home_font_size : "75%"
 
 :header_title: "Milkode"
 :header_icon : "/images/MilkodeIcon135.png"
