@@ -1,9 +1,9 @@
 GIT
   remote: https://github.com/ongaeshi/milkode.git
-  revision: aec6813ab206ed4dff199483fda41d32d6c5b051
+  revision: bb96e5a2fe93cc97fb86b604fe397e62692bac10
   branch: develop
   specs:
-    milkode (1.7.1)
+    milkode (1.8.0)
       archive-zip (>= 0.4.0)
       coderay (>= 1.0.5)
       haml (>= 3.1.2)
@@ -36,7 +36,7 @@ GEM
     haml (4.0.5)
       tilt
     highline (1.6.21)
-    i18n (0.6.9)
+    i18n (0.6.11)
     io-like (0.3.0)
     json (1.8.1)
     launchy (2.4.2)
@@ -53,7 +53,7 @@ GEM
       pkg-config
     sane (0.25.8)
       os (~> 0)
-    sass (3.3.8)
+    sass (3.3.10)
     sinatra (1.4.5)
       rack (~> 1.4)
       rack-protection (~> 1.4)
